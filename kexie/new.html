@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="Shortcut Icon" href="logo.ico">
+        <link rel="stylesheet" href="new.css" type="text/css">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <style type="text/css">
+        @media screen and (max-width:370px)
+        {#fie{transform:scale(0.8,0.8);}}
+        </style>
+    </head>
+    <body>
+        <fieldset id="fie">
+            <legend id="leg">报名表</legend>
+            <form action="" method="post" autocomplete="off" id="form">
+                <div class="index" id="name">
+                    <p class="pro" id="namep">姓名：</p>
+                    <input type="text" required class="inner" onchange="change()" id="namediv" />
+                    <footer class="circle">
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                    </footer>
+                </div>
+                <div class="index" id="tel">
+                    <p class="pro" id="telp">电话：</p>
+                    <input type="tel" required class="inner" onchange="change()" id="teldiv" />
+                    <footer class="circle">
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                    </footer>
+                </div>
+                <div class="index" id="qq">
+                    <p class="pro" id="qqp">QQ：</p>
+                    <input type="num" required class="inner" onchange="change()" id="qqdiv" />
+                    <footer class="circle">
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                        <div class="maru"></div>
+                    </footer>
+                </div>
+                <div class="radio" id="sex">
+                    性别：&nbsp&nbsp<input type="radio" name="sex"/>♀&nbsp&nbsp&nbsp&nbsp<input type="radio" name="sex"/>♂
+                </div>
+                <div style="margin-top:21px" class="radio" id="class">
+                    选择部门：<br/><input type="checkbox" checked name="tech"/>One Echo&nbsp&nbsp<input type="checkbox" name="office"/>办公部<br/>
+                    <input type="checkbox" name="media"/>媒体部&nbsp&nbsp&nbsp&nbsp<input type="checkbox" name="paper"/>期刊部
+                </div>
+                <fieldset id="infor">
+                    <legend>个人简介：</legend>
+                    <textarea placeholder="可不填……" class="in"></textarea>
+                </fieldset>
+                <div id="wel">
+                    <p class="wel">欢迎加入科学技术协会</p>
+                   <div id="fire"></div>
+                </div>
+                <button>提交</button>
+            </form>
+        </fieldset>
+        <script src="new.js"></script>
+    </body>
+</html>

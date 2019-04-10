@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1,minimal-ui" name="viewport">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic|Material+Icons">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+
+        <title></title>
+        
+        
+    </head>
+    
+    <body>
+        
+    <div id="app">
+
+  <div id="txt">
+      <p>{{ initial }}</p>
+    <md-field>
+      <label>Initial Value</label>
+      <md-input v-model="initial"></md-input>
+    </md-field>
+   
+  <button v-on:click="greet">Add 1</button>
+  <p>The button above has been clicked {{ counter }} times.</p>
+
+ </div>
+
+    
+
+</div>
+        
+        
+        
+        
+         <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-material@beta"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        
+        <script>
+            
+          "use strict"
+
+Vue.use(VueMaterial.default)
+var example = {
+  name: "TextFields",
+  data: function data() {
+    return {
+      initial: "Initial Value",
+      type: null,
+      withLabel: null,
+      inline: null,
+      number: null,
+      textarea: null,
+      autogrow: null,
+      disabled: null
+    }
+  }
+}
+
+var app = new Vue({
+    el:'#txt',
+    data: {
+   initial:'sss'
+
+  },
+   methods:{
+        greet:function edu(){
+       alert('Hello ' + this.initial + '!')
+       }
+   }
+})
+
+app.$mount("#app")
+
+        </script>
+    </body>
+    
+</html>

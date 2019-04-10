@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>百度一下，你就知道</title>
+    <style>
+        *{
+           padding: 0px;
+           margin: 0px;
+        }
+        #head_right{
+            position: fixed;
+            right:12px;
+            top: 10px;
+            height: 38px;
+            line-height: 38px;
+            margin: 0 0 30px;
+            word-spacing:1em;
+            
+        }
+        .head_right_1{
+            font-weight: bold;
+            font-family: Arial;
+            font-size: 13px;
+            color: black
+        }
+        .head_right_2{
+            font-family: Arial;
+            font-size: 13px;
+            color: black
+        }
+        #more_product{
+            background-color:#3385ff;
+            color: #fff;
+            text-decoration: none;
+            padding: 3px;
+            font-size: 13px;
+        }
+        #baidu_img img{
+            width: 270px;
+            margin-bottom: 20px;
+        }
+        #search{
+            text-align: center;
+            height: 38px;
+            margin: 10px auto 30px;
+            position: fixed;
+            width: 100%;
+            top: 17.5%;
+        }
+        #search input{
+            width: 540px;
+            height: 36px;
+            box-sizing: border-box;
+            padding-left: 8px;
+            font-size: 15px;
+            border: 1px solid #b8b8b8;
+        }
+        #search a{
+            display: inline-block;
+            background-color: #3385ff;
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            margin:0px;
+            position:relative;
+            right:5px;
+            top: 1px;
+        }
+        #search a:hover{
+            border: #0000ff;
+            background-color:#2079fd;
+        }
+        #search a:focus{
+            border: #0000ff;
+            background-color:#1170fd;
+        }
+        #tail{
+            position: fixed;
+            bottom: 3px;
+            width: 100%;
+            text-align: center;
+            padding: 50px 0;
+            font-size: 12px;
+        }
+        #tail_top{
+            margin-bottom: 23px;
+            color:#666;
+        }
+        #tail_top img{
+            margin-bottom: 2.5px;
+        }
+        #tail_middle{
+            margin-bottom:5px;
+        }
+        #tail_middle a{
+            margin: 0 10px;
+            color: darkgray;
+        }
+        #tail_bottom{
+            color: darkgray;
+        }
+        #tail_bottom a{
+            color: darkgray;
+        }
+        #input_{
+            position: relative;
+        }
+        #input_ img{
+            position: absolute;
+            top: 50%;
+            margin-top: -8px;
+            right: 15px;
+            height: 17px;
+            width: 19px;
+        }
+        #baidu_img a{
+            display:inline-block;
+            width: 270px;
+            height: 129px;
+            position: relative;
+            right: 4px;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div id="head_right">
+            <a href="http://news.baidu.com/" class=head_right_1 target="_blank">新闻</a>
+            <a href="https://www.hao123.com/" class=head_right_1 target="_blank">hao123</a>
+            <a href="http://map.baidu.com/" class=head_right_1 target="_blank">地图</a>
+            <a href="http://v.baidu.com/" class=head_right_1 target="_blank">视频</a>
+            <a href="http://tieba.baidu.com/" class=head_right_1 target="_blank">贴吧</a>
+            <a href="http://xueshu.baidu.com/" class=head_right_1 target="_blank">学术</a>
+            <a href="#" class="head_right_2">登录</a>
+            <a href="#" class="head_right_2">设置</a>
+            <a href="#" id="more_product">更多产品</a>
+    </div>
+    <div id=content>
+
+        </div>
+        <div id=search>
+            <div id=baidu_img>
+                <a href="https://www.baidu.com/s?wd=%E4%BB%8A%E6%97%A5%E6%96%B0%E9%B2%9C%E4%BA%8B&tn=SE_PclogoS_8whnvm25&sa=ire_dl_gh_logo&rsv_dl=igh_logo_pcs" target="_blank"><img src="bd_logo1.png" alt="bd_logo1.png" width="270" height="129"></a></br>
+            </div>
+            <span id=input_>
+                <img src="3.png">
+                <input type="text">
+            </span>
+            <a href="#">百度一下</a>
+        </div>
+    </div>
+    <div id=tail>
+        <div id=tail_top>
+            <img src="bd_2code.png" alt="bd_2code.png"><br/>
+            <strong>百度</strong>
+        </div>
+        <div id=tail_middle>
+                <a href="https://www.baidu.com/cache/sethelp/help.html" target="_blank">把百度设为主页</a>
+                <a href="http://home.baidu.com/" target="_blank">关于百度</a>
+                <a href="http://ir.baidu.com/phoenix.zhtml?c=188488&p=irol-homeprofile" target="_blank">About  Baidu</a>
+                <a href="http://e.baidu.com/?refer=888" target="_blank">百度推广</a>
+        </div>
+        <div id=tail_bottom>
+                ©2018 Baidu <a href="http://www.baidu.com/duty/" target="_blank">使用百度前必读</a> <a href="http://jianyi.baidu.com/" target="_blank">意见反馈</a> 京ICP证030173号
+                <img src="1.png"> &nbsp&nbsp&nbsp&nbsp&nbsp<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001">京公网安备11000002000001号</a><img src="2.png"> 
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Hustsvo Enter</title>
+    </head>
+    <body>
+        <form action="Hustsvo_Enter.php" method="post" target="iframe">
+            <p>姓名:</p>
+            <input type="txt" name="name" required="required" oninvalid="setCustomValidity('名字呢！');" oninput="setCustomValidity('');">
+            <span>*</span><br>
+            <p>学号:</p>
+            <input type="txt" name="id" required="required" oninvalid="setCustomValidity('学号是主键啊！');" oninput="setCustomValidity('');">
+            <span>*</span><br>
+            <p>联系电话:</p><input type="txt" name="phone" required="required" oninvalid="setCustomValidity('留电话！');" oninput="setCustomValidity('');" onchange="
+              chkmaxsms(this,'11')
+              function   chkmaxsms(vobj1,vmax)   {  
+  var   str=vobj1.value;  
+  var   strlen=str.length;  
+   
+  if(strlen!=vmax)   {  
+  alert('请输入正确手机号');  
+  eval_r(vobj1.value=str.substr(0,vmax));  
+  }  
+  }  
+              
+              
+              ">
+            <span>*</span><br>
+            <p>院系:</p><input type="txt" name="institute" required="required" oninvalid="setCustomValidity('学院专业告诉我哦');" oninput="setCustomValidity('');">
+            <span>*</span><br>
+            <p>要报名的部门:</p>
+            <input type="checkbox" name="department[]" value="人事部">
+            <span>人事部</span>
+            <input type="checkbox" name="department[]" value="文化部">
+            <span>文化部</span>
+            <input type="checkbox" name="department[]" value="媒体部">
+            <span>媒体部</span>
+            <input type="checkbox" name="department[]" value="公关部">
+            <span>公关部</span>
+            <br>
+            <br>
+            <input type="checkbox" name="department[]" value="对外联系部">
+            <span>对外联系部</span>
+            <input type="checkbox" name="department[]" value="创业教育部（sep）">
+            <span>创业教育部（sep）</span>
+            <input type="checkbox" name="department[]" value="项目管理部">
+            <span>项目管理部</span>
+            <br>
+            <br>
+            <input type="checkbox" name="department[]" value="就业创业见习部">
+            <span>就业创业见习部</span>
+            <input type="checkbox" name="department[]" value="创业发展部部">
+            <span>创业发展部部</span>
+            <input type="checkbox" name="department[]" value="产品工作室">
+            <span>产品工作室</span>
+            <br>
+            <br>
+            <input type="submit" name="submit" required="required">
+         </form>
+        <iframe name="iframe"></iframe> <!-- 如果不想显示后台情况，可隐藏这个框架（diplay） -->
+    </body>
+</html>

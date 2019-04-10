@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title></title>
+        <!-- 引入样式 -->
+        <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+        <!-- 引入组件库 -->
+        <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <style>
+         *{
+        font-family: Noto Serif CJK SC Light;
+        }
+        body{
+        background-color: #212121;
+        width:100%;
+
+        }
+        .s1{
+        position: fixed;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #303030;
+        width: 640px;
+        height:480px;
+        }
+        .s11{
+        color: #B71C1C;
+        margin-top: 48px;
+        margin-left: 64px;
+        height: 36px;
+        }
+        #s2{
+        width: 640px;
+        margin-top: 49px;
+        }
+        .text1{
+        margin-top: 24px;
+        font-size: 16px;
+        color:#FFFFFF;
+        opacity: 0.54;
+        text-align: center;
+        }
+        #s21{
+        margin-left: 280px;
+        }
+        #form{
+        margin-top: 100px;
+        width: 400px;
+        margin-left: 120px;
+        }
+        #s31{
+        width: 64px;
+        height: 32px;
+        border-radius: 0.1;
+        background-color: #616161;
+        font-size: 14px;
+        color: #FFFFFF;
+        border-style: none;
+        }
+                #s31{
+                        width: 64px;
+                        height: 32px;
+                        border-radius: 0.1;
+                        background-color: #616161;
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        border-style: none;
+                }
+                #s33{
+                        background:url("photos/上传.png") no-repeat left top;
+                        width: 36px;
+                        height: 36px;
+                        border-style: none;
+                        
+                        position: relative;
+                        top: 15px;
+                }
+                #myppt{
+                    
+                        height: 32px;
+                        border-radius: 0.1;
+                        background-color: #616161;
+                        font-size: 14px;
+                        color: #FFFFFF;
+                        border-style: none;
+                        opacity: 100;
+                }
+        </style>
+</head>
+
+<div class="s1">
+        <div class="s11">
+                <h1>上传文件</h1>
+        </div>
+        <div id="s2">
+                <img src="photos/无文件.svg" height="110" width="80" id="s21"/>
+                <h1 class="text1" id="te">未上传文件</h1>
+        </div>
+        <form id="form">
+                <input type="button" onclick="window.location.href='logout.php'" value="注销登陆" id="s31"/>
+                <input type="file" id="myppt" name="myppt" onchange="holdfile()"/>
+                <input type="button" onclick="uploadFile()" id="s33"/>
+                <br />
+        </form>
+        <div id="parent">
+                <div id="son"></div>
+                <div id="sona"></div>
+        </div>
+        <div>
+                <el-progress :text-inside="true" :stroke-width="18" :percentage=per></el-progress>
+        </div>
+</div>
+        <script type="text/javascript">
+
+                var myppt = document.getElementById('form');
+                console.log(myppt)
+                function uploadFile() {
+                        var formData = new FormData(myppt);
+                        console.log(formData);
+                        /** 
+                         * 必须false才会避开jQuery对 formdata 的默认处理 
+                         * XMLHttpRequest会对 formdata 进行正确的处理 
+                         */
+                        $.ajax({
+                                type: "POST",
+                                url: "upload.php",
+                                data: formData,
+                                processData: false,
+                                //必须false才会自动加上正确的Content-Type 
+                                contentType: false,
+                                success: function (msg) {
+                                        //window.location.href='upload.php';
+                                        $("#son").html(msg);
+                                        console.log(msg)
+                                        $("#te").html("上传完成");
+                                },
+                                xhr: function () {
+                                        var xhr = $.ajaxSettings.xhr();
+                                        if (onprogress && xhr.upload) {
+                                                xhr.upload.addEventListener("progress", onprogress, false);
+                                                return xhr;
+                                        }
+                                }
+                        });
+
+                }
+                /**
+                 * 侦查附件上传情况 ,这个方法大概0.05-0.1秒执行一次
+                 */
+                function onprogress(evt) {
+                        var loaded = evt.loaded;     //已经上传大小情况 
+                        var tot = evt.total;      //附件总大小 
+                        var per = Math.floor(100 * loaded / tot);  //已经上传的百分比 
+                        $("#te").html("上传中..."+per + "%");
+                        
+                       
+                       
+                }
+
+
+
+
+function holdfile(){
+    var pic=document.getElementById("s21");
+    pic.src="photos/文件.png"
+    var text=document.getElementById("te");
+    text.innerHTML="上传文件";
+}
+
+        </script>
+</body>
+
+</html>

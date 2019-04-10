@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="2484 392 18 18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: #ffb74d;
+      }
+    </style>
+  </defs>
+  <g id="warning_sign" transform="translate(2484 392)">
+    <rect id="rectangle" class="cls-1" width="18" height="18"/>
+    <path id="warning_sign-2" data-name="warning_sign" class="cls-2" d="M.5,16h17L9,1ZM10,14H8V12h2Zm0-3H8V7h2Z"/>
+  </g>
+</svg>

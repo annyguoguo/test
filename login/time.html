@@ -1,0 +1,106 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8" > 
+<title>距离比赛开始</title> 
+  <style>
+        *{
+        font-family: Noto Serif CJK SC Light;
+        }
+        body{
+        background-color: #212121;
+        width:100%;
+        }
+        .s1{
+        position: fixed;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #303030;
+        width: 480px;
+        height:480px;
+        }
+        .s11{
+        color: #B71C1C;
+        margin-top: 48px;
+        margin-left: 64px;
+        height: 36px;
+        }
+        .box{
+            margin-left: 64px;
+            margin-top: 32px;
+            font-size: 16px;
+            height: 30px;
+
+        }
+        .text1{
+            float: left;
+        font-size: 16px;
+        color:#FFFFFF;
+        opacity: 0.54;
+        }
+        .text2{
+            float: left;
+            margin-left: 32px;
+            color:#FFFFFF;
+            width: 200px;
+        }
+        #s5{
+            margin-top: 32px;
+            margin-right: 32px;
+            background-color: transparent;
+            border-style: none;
+        }
+        </style>
+  
+  
+  
+</head> 
+<body onload="leftTimer()"> 
+  <div class="s1">
+<h2 class="s11">距离比赛开始:</h2> 
+<div id="timer" class="s11"></div> 
+
+
+
+
+	<iframe src ="tz.php" frameborder="0" scrolling="no" style="width:336px;height:280px;padding-top:20px;padding-left:8px" scrolling="auto">
+	    </iframe>
+</div>
+<script language="javascript" type="text/javascript">  
+function leftTimer(year,month,day,hour,minute,second){ 
+  var leftTime = (new Date(year,month-1,day,hour,minute,second)) - (new Date()); //计算剩余的毫秒数 
+  var days = parseInt(leftTime / 1000 / 60 / 60 / 24 , 10); //计算剩余的天数 
+  var hours = parseInt(leftTime / 1000 / 60 / 60 % 24 , 10); //计算剩余的小时 
+  var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟 
+  var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数 
+  days = checkTime(days); 
+  hours = checkTime(hours); 
+  minutes = checkTime(minutes); 
+  seconds = checkTime(seconds); 
+  setInterval("leftTimer(2018,5,4,18,0,0)",1000); 
+  document.getElementById("timer").innerHTML = days+"天" + hours+"小时" + minutes+"分"+seconds+"秒";  
+    if(leftTime<0){window.location.href="upload.html";}
+} 
+function checkTime(i){ //将0-9的数字前面加上0，例1变为01 
+  if(i<10) 
+  { 
+    i = "0" + i; 
+  } 
+  return i; 
+} 
+  
+</script>
+
+
+
+
+
+</body> 
+
+
+
+
+</html>

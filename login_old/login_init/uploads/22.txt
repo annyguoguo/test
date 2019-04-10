@@ -1,0 +1,27 @@
+<?php
+	include('mysqli.connect.php');
+	$sql = 'select candidate from vote_result where department="编辑部" and candidate="张玥"';
+	$result = mysqli_query($conn, $sql);
+	$i = 0;
+	while($row = mysqli_fetch_array($result)) $i++;
+	echo $i;
+	echo ',';
+	$sql = 'select candidate from vote_result where department="编辑部" and candidate="张曦林"';
+	$result = mysqli_query($conn, $sql);
+	$i = 0;
+	while($row = mysqli_fetch_array($result)) $i++;
+	echo $i;
+	echo ',';
+	$sql = 'select candidate from vote_result where department="OneEcho" and candidate="寿鹏鹏"';
+	$result = mysqli_query($conn, $sql);
+	$i = 0;
+	while($row = mysqli_fetch_array($result)) $i++;
+	echo $i;
+	echo ',';
+	$sql = 'select candidate from vote_result where department="OneEcho" and candidate="张展硕"';
+	$result = mysqli_query($conn, $sql);
+	$i = 0;
+	while($row = mysqli_fetch_array($result)) $i++;
+	echo $i;
+	mysqli_close($conn);
+?>

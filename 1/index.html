@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>轮播图</title>
+        <style>
+            *{
+                text-decoration: none;
+            }
+            #container{
+                position: relative;
+                width: 640px;
+                height: 355px;
+                margin:20px auto;
+                border: 3px solid #ff9bde;
+                overflow: hidden;
+            }
+            #list{
+                position: absolute;
+                z-index: 1;
+                width:1920px;
+                height: 355px;
+            }
+            #list img{
+                width: 640px;
+                height: 355px;
+            }
+            .arrow{
+                position: absolute;
+                z-index: 2;
+                font-size: 60px;
+                color: #fff;
+                background-color: RGBA(0, 0, 0, .3);
+                width: 60px;
+                height: 70px;
+                top: 150px;
+                text-align: center;
+                line-height: 1;
+                cursor: pointer;
+            }
+            .arrow:hover{
+                background-color: RGBA(0, 0, 0, .7);
+            }
+            #prev{
+                left: 0px;
+            }
+            #next{
+                right: 0px;
+            }
+            #buttons{
+                position: absolute;
+                z-index: 2;
+                height: 10px;
+                width: 100px;
+                bottom: 20px;
+                left: 305px;
+            }
+            #buttons span{
+                float: left;
+                width:10px;
+                height: 10px;
+                margin-right: 5px;
+                border:1px solid #fff;
+                border-radius: 50%;
+                background-color:RGBA(0, 0, 0, .7);
+                cursor: pointer;
+            }
+            #buttons .on{
+                background-color: #ff9bde;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <div id="list">
+                <img src="1.jpg">
+                <img src="2.jpg">
+                <img src="3.jpg">
+            </div>
+            <div id="arrows">
+                <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+                <a href="javascript:;" id="next" class="arrow">&gt;</a>
+            </div>
+            <div id="buttons">
+                <span class=on></span>
+                <span class=off></span>
+                <span class=off></span>
+            </div>
+        </div>
+        <script>
+            //自动轮播
+            var li=document.getElementById("container").getElementsByTagName("img");
+            var buttons=document.getElementById("buttons").getElementsByTagName("span")
+            var num=0;
+            var len=li.length;
+            var autogo;
+            function play(){
+                li[num].style.display="none";
+                buttons[num].className="off";
+                num++;
+                num==len?num=0:num;
+                li[num].style.display="";
+                buttons[num].className="on";
+                }
+            autogo=setInterval(play,2000);
+
+            //鼠标悬停，图片静止，鼠标挪开恢复
+            var container=document.getElementById("container");
+            container.onmouseover=function(){
+                clearInterval(autogo);
+            };
+            container.onmouseout=function(){autogo=setInterval(play,2000);
+            }       
+   
+            //点击箭头
+            var prev=document.getElementById("prev");
+            var next=document.getElementById("next");
+            next.onclick=play;
+            prev.onclick=function(){
+                li[num].style.display="none";
+                buttons[num].className="off";
+                num--;
+                num==-1?num=len-1:num;
+                li[num].style.display="";
+                buttons[num].className="on";
+            }
+
+            //小圆点 ps:用闭包或者说匿名包裹器(两者不同)正确获取i,因为js中没有私有作用域
+            for (var i = 0; i < buttons.length; i++) {
+                (function(i){                    //立即执行函数 
+                        buttons[i].onclick = function(){
+                        li[num].style.display="none";
+                        buttons[num].className="off";
+                        num=i;
+                        li[num].style.display="";
+                        buttons[num].className="on";
+                        }
+                    }
+                )(i)
+                console.log(i);  //控制台可见在for循环内部i有3种取值
+            }
+        </script>
+    </body>
+</html>

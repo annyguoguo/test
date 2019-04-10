@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title></title>
+        
+<link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/vue-material.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-material@beta/dist/theme/default.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+   
+ 
+    <style type="text/css">
+	body{
+         background:#212121;
+		 margin:0; padding:0;
+		 
+		 font-family:'Microsoft YaHei Light';
+		 }
+   .zong{margin:0; padding:0;}
+   .ct{margin-left:-360px;
+   position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -240px;
+   vertical-align: middle;
+       width: 720px;
+       height: 480px;
+   }
+	.dab{
+	        background:#B71C1C;
+			color:#FFFFFF;
+			width:432px;
+			padding-bottom:24px;
+			padding-top:40px;
+            padding-left:40px;
+			
+	        } 
+	.aaa{	   		 
+		   font-size:48px;
+		   opacity: 0.9;
+		 }
+    .bbb{
+	       font-size:48px;
+		   opacity: 0.9;
+		 }
+	.ccc{
+	       width:44px;
+		   height:24px;
+           font-size:24px;
+		   opacity: 0.9;
+		   }
+	 .gg{
+	     font-size:40px;
+		  color:#D32F2F; 
+       padding-left:5px
+		 }
+     .dr{
+	      font-size:40px;
+		  color:#D32F2F;
+		  }
+	 .zxa{
+	      background:#303030;
+		  width:432px;
+		  height:384px;
+		  position: relative;
+		  top: 8px;
+		  padding-left:40px;
+		  padding-top:40px;	
+		  }
+	 .zxaaa{
+	        padding-left:0px;
+			position:relative;
+            left:-76px;
+            top:45px;
+			color:#FFFFFF;
+			opacity: 0.9;
+	       }
+	 .zxaab{
+	        padding-left:0px;
+			position:relative;
+            left:84px;
+            top:15px;
+			color:#FFFFFF;		
+	       }
+	 .zxaba{
+	         padding-left:10px;
+			 position:relative;
+             left:0px;
+             top:15px;
+			 color:#FFFFFF;
+			 opacity: 0.9;
+	       }
+     .zxabb{
+	        padding-left:0px;
+			position:relative;
+            left:84px;
+            top：-5px;
+			color:#FFFFFF;
+	       }
+	 .zxaca{
+	        padding-left:10px;	
+			position:relative;
+            left:0px;
+            top:10px;
+			color:#FFFFFF;
+			opacity: 0.9;
+	       }
+	 .zxacb{
+	        padding-left:0px;
+			position:relative;
+            left:84px;
+            top:-40px;
+			color:#FFFFFF;
+	       }
+     .zxb{
+	      background:#303030;
+		  width:240px;
+		  height:488px;
+		  position:relative;
+          left:440px;
+          bottom:480px;
+          padding-left:20px;
+          padding-right:20px;
+		  padding-top:88px;	
+		  }  
+	  .dr{	    
+		 
+		  }
+	  .drl{
+	      position:relative;
+          left:130px;
+          top:55px;
+		  }
+		.zc{
+		  position:relative;
+          left:-5px;
+         
+		  border:none;
+		  background:#303030;
+		  color:#D32F2F;
+		  }
+		  #app{
+		      margin-top: 50px;
+		  }
+		  :root {
+            
+    --md-theme-default-primary: #ff5252;
+    --md-theme-default-accent: #ff5252;
+    --md-theme-default-theme: "light";
+    caret-color: #B71C1C;
+    --md-theme-default-primary-on-background: #ff5252;
+    font:white;
+    color:white;
+}
+html.md-theme-default{color:#FFFFFF;font:white;}
+
+    </style>
+       </head>
+    <body>
+
+	    <div class="ct">
+	<div class="dab">
+	<span class="aaa">创客马拉松</span>
+    <span class="bbb">|</span>
+	<span class="ccc">比赛系统</span>
+	</div>
+	<div class="zxa">
+    <span class="gg">公告</span>
+	<span class="l"></span>
+	
+	<div class="autoin" style="color:#FFFFFF;">
+	<iframe src ="tz.php" frameborder="0" scrolling="no" style="width:336px;height:300px;padding-top:20px;padding-left:8px" scrolling="auto">
+	    </iframe>
+	
+	</div>
+	</div>
+	<div class="zxb">
+	<span class="dr" style="margin-top:88px">登录</span>
+    <div id="app">
+        <template>
+        <md-field>
+      <label style="-webkit-text-fill-color: rgba(256,256,256,256.56);">团队名称</label>
+      <md-input v-model="user" style="-webkit-text-fill-color: rgba(256,256,256,256.56);"></md-input>
+    </md-field>
+
+    <md-field>
+      <label style="-webkit-text-fill-color: rgba(256,256,256,256.56);">密码</label>
+      <md-input v-model="psd" style="-webkit-text-fill-color: rgba(256,256,256,256.56);"></md-input>
+    </md-field>
+
+        
+        
+        
+        
+        
+        
+        
+        </template>
+        
+    </div>
+        <button onclick="window.location.href='register.html'" class="zc">创建一个新团队</button>
+        <div class="drl">
+        <input type="submit" name="submit" value="" style="background:none;border:none;background-image:url(icon/登录.svg);height:64px;width:64px" onclick="MakeForm()">
+</div>
+	</div>
+
+	</div>
+	
+	
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+	<script src="https://unpkg.com/vue-material@beta"></script>
+    <script>
+   
+Vue.use(VueMaterial.default)
+
+var example = {
+  name: "TextFields",
+  data: function data() {
+    return {
+      initial: "user",
+      initial: "psd",
+      type: null,
+      withLabel: null,
+      inline: null,
+      number: null,
+      textarea: null,
+      autogrow: null,
+      disabled: null
+    }
+  }
+}
+
+var app = new Vue(example)
+
+app.$mount("#app")
+
+    </script>
+    <script>
+    
+    function MakeForm()  
+{  
+  var $userName=app.user;
+    var $password=app.psd;
+   $.ajax({
+                                type: "POST",
+                                url: "login.php",
+                                data: {userName:$userName,password:$password},
+                                dataType:"TEXT",
+                                success: function (msg) {
+                                       $("body").html(msg);
+                                       
+                                },
+                                
+                        });
+   
+}  
+    
+    
+    </script>
+    </body>
+</html>
+

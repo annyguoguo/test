@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>注册团队</title>
+    <!--未定-->
+
+</head>
+
+<body>
+    <div id="content">
+        <h2 id="headline">注册团队</h2>
+        <form action="register.php" method="get" enctype="multipart/form-data" onsubmit="return validate_form(this)">
+            <input type="text" class="singleInput" name="userName" maxlength="15" placeholder="团队名称" />
+            <input type="text" class="singleInput" name="email" maxlength="20" placeholder="电子邮箱" />
+            <input type="password" class="singleInput" id="singleInput_2" name="password" maxlength="15" placeholder="创建一个密码（至少6位数）" />
+            <div id="pass_hint_container">
+                <div id="pass_hint"></div>
+                <span id="pass_warning"></span>
+            </div>
+            <input type="password" id="repeat_pass" class="singleInput" name="confirmPassword" maxlength="15" placeholder="重复输入密码" />
+            <div id="repeat_pass_hint_container">
+                <div id="repeat_pass_hint"></div>
+                <span id="repeat_pass_warning"></span>
+            </div>
+            <div>
+                <p id="membersInfo">队员信息</p>
+                <div id="members"></div>
+                <button type="button" id="addMember"></button>
+                <span id="addMember_">添加一个成员</span>
+            </div>
+            <p id="otherInfo">其他信息</p>
+            <p>需要主办方提供的硬件设施</p>
+            <textarea name="hardwares" class="multiInput" cols="30" rows="4" placeholder="比如3D打印机等"></textarea>
+            <br/>
+            <br/>
+            <p>比赛所需材料</p>
+            <textarea name="materials" class="multiInput" cols="30" rows="4"></textarea>
+            <br/>
+            <br/>
+            <p>参赛经历及奖项（选填）</p>
+            <textarea name="remark" class="multiInput" cols="30" rows="4" placeholder="选填"></textarea>
+            <br/>
+            <br/>
+            <input type="submit" name="submit" value="" />
+        </form>
+    </div>
+    <script src="register.js"></script>
+    <link href="register.css" rel="stylesheet" type="text/css" />
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+/*transition*/
+.fade-enter {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+.fade-enter-to, .fade-leave {
+    opacity: 1;
+}
+.fade-leave-active {
+    position: absolute;
+}
+.fade-leave-to {
+    transform:translateX(100px);
+    opacity: 0;
+}
+.fade-enter-active,.fade-leave-active {
+    transition: .5s;
+}
+.fade-move {
+    transition: .5s;
+}
+/*transition*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+#todo-app {
+    margin:10px;
+}

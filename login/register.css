@@ -1,0 +1,218 @@
+* {
+    text-decoration-line: none;
+    background-color: #303030;
+    color: white; 
+    font-family: 'Microsoft YaHei Light';
+}
+
+html {
+    display:flex;
+    justify-content:center;
+    background-color: #212121;
+}
+
+body {
+    position: absolute;
+    margin-top: 160px;
+    margin-bottom: 160px;
+    background-color: #303030;
+}
+
+#content {
+    margin: 56px 160px 48px 48px;  
+}
+
+#headline {
+    font-size: 24px;
+    color: #B71C1C;
+}
+
+.singleInput {
+    display: block;
+    width: 280px;
+    height: 24px;
+    margin-bottom: 16px;
+    border: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.54);
+    font-size: 16px;
+    outline: none;
+}
+
+#singleInput_2 {
+    margin-bottom: 0px;
+}
+
+#singleInput_3 {
+    margin-bottom: 24px;
+}
+
+.singleInput:focus {
+    color: white;
+    caret-color: #B71C1C;
+    border-bottom:1px solid #B71C1C;
+}
+
+#pass_hint_container {
+    position: relative;
+    width: 280px;
+    top: 6px;
+    margin-bottom: 16px;
+}
+
+#pass_hint {
+    width: 280px;
+    margin-right: 0px;
+    font-size: 12px;
+    color: #FFD74D;
+}
+
+#pass_warning {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#repeat_pass {
+ position: relative;
+ margin-bottom: 0px;
+}
+
+#repeat_pass_hint_container {
+    position: relative;
+    width: 280px;
+    top: 6px;
+    margin-bottom: 16px;
+}
+
+#repeat_pass_hint {
+    width: 280px;
+    margin-right: 0px;
+    font-size: 12px;
+    color: #FFD74D;
+}
+
+#repeat_pass_warning {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+#membersInfo {
+    color: #B71C1C;
+    margin-top: 25px;
+    margin-bottom: 19px;
+}
+
+#members button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url(photos/delete.svg);
+}
+
+.people_container {
+    position: relative;
+    width: 280px;
+    height: auto;
+    margin-bottom: 16px;
+}
+
+.people_container span {
+    position: relative;
+    left: 8px;
+    top: -4px;
+}
+
+.people_container input {
+    position: relative;
+    display: block;
+    width: 248px;
+    height: 32px;
+    margin: 8px 0px;
+    padding: 0px;
+    left: 32px;
+    border: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.54);
+    font-size: 16px;
+    outline: none;
+}
+
+.people_container input.people_phone {
+    margin-bottom: 0px;
+}
+
+.people_container input:focus {
+    color: white;
+    caret-color: #B71C1C;
+    border-bottom:1px solid #B71C1C;
+}
+
+.people_container div {
+    position: relative;
+    top: 2.4px;
+    left: 32px;
+    font-size: 12px;
+    color: #FFD74D;
+}
+
+.people_container span.warning_pic {
+    position: absolute;
+    float: right;
+    width: 16px;
+    height: 16px;
+    margin-right: 16px;
+    margin-top: -11px;
+}
+
+#addMember {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url(photos/add.svg);
+}
+
+#addMember_ {
+    display: inline-block;
+    position: relative;
+    left: 8px;
+    top: -4px;
+}
+
+#otherInfo {
+    color: #B71C1C;
+    margin: 25px 0px 19px 0px;
+}
+
+.multiInput {
+    width: 280px;
+    height: 90px;
+    border: none;
+    border-bottom:1px solid rgba(255, 255, 255, 0.54);
+    font-size: 16px;
+    outline: none;
+    resize: none;
+}
+
+.multiInput:focus {
+    color: white;
+    caret-color: #B71C1C;
+    border-bottom:1px solid #B71C1C;
+}
+
+[name="submit"] {
+    position: relative;
+    float: right;
+    width: 64px;
+    height: 64px;
+    right: -96px;
+    margin-bottom: 48px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-image: url(photos/submit.svg);
+}

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <!--未定-->
+    <!--请移到外联css文件-->
+    <style>
+    </style>
+</head>
+
+<body>
+    <h2>用户注册系统</h2>
+    <hr/>
+    <form action="register.php" method="post" enctype="multipart/form-data" onsubmit="return validate_form(this)">
+        队 名：
+        <input type="text" name="userName" size="20" maxlength="15" placeholder="团队名称" />
+        <br/>
+        <br/> 电子邮箱：
+        <input type="text" name="email" size="20" maxlength="15" placeholder="电子邮箱" />
+        <br/>
+        <br/> 登录密码：
+        <input type="password" name="password" size="20" maxlength="15" />
+        <br/>
+        <br/> 确认密码：
+        <input type="password" name="confirmPassword" size="20" maxlength="15" />
+        <br/>
+        <br/> 输入电话1:
+        <input type="text" class="ph1" name="ph1" size="20" maxlength="15" onchange="phoneChange(document.getElementsByClassName('ph1')[0].value.length)"
+        />
+        <br/>
+        <br/> 输入电话2:
+        <input type="text" class="ph2" id="ph2" name="ph2" size="20" maxlength="15" onchange="phoneChange(document.getElementsByClassName('ph2')[0].value.length)"
+        />
+        <br/>
+        <br/>
+        <div>
+            <p>参赛人员:</p>
+            <div id="members"></div>
+            <button type="button" onclick="addMember()">添加人员</button>
+        </div>
+        <br/>
+        <br/> 需要主办方提供的硬件设施 :
+        <textarea name="hardwares" cols="30" rows="4" placeholder="请填写备注信息"></textarea>
+        <br/>
+        <br/> 比赛所需材料 :
+        <textarea name="materials" cols="30" rows="4" placeholder="请填写备注信息"></textarea>
+        <br/>
+        <br/> 参赛经历及奖项（选填） :
+        <textarea name="remark" cols="30" rows="4" placeholder="请填写备注信息"></textarea>
+        <br/>
+        <br/>
+        <input type="submit" name="submit" value="注册按钮" />
+        <input type="reset" name="cancel" value="重新填写" />
+    </form>
+    <script>
+
+        function phoneChange(pl, i) {     //phoneLength   
+            console.log(pl);
+            console.log(i);
+            if (pl != 11) {
+                document.getElementsByClassName('ph_hint')[i].innerText = "请输入正确的手机号";
+            } else if (pl = 11) {
+                document.getElementsByClassName('ph_hint')[i].innerText = "";
+            }
+        }
+
+        function validate_form(thisform) {
+            with (thisform) {
+                let phoneInput = document.getElementsByClassName('people_phone');
+                let l_ = phoneInput.length;
+                let Input = document.getElementsByTagName('input');
+                let l = Input.length - 1;
+                for (let j = 0; j < l_; j++) {
+                        phoneChange(phoneInput[j].value.length, j);
+                    };
+                for (let i = 0; i < l; i++) {
+                    if (Input[i].value == null || Input[i].value == '') {
+                        Input[i].focus();
+                        return false;
+                    };
+                };
+                return true;
+            };
+        }
+
+        function addMember() {
+            let members = document.getElementById('members');
+            let newDiv = document.createElement('div');
+            let newButton = document.createElement('button');
+            let newNameInput = document.createElement('input');
+            let newMajorInput = document.createElement('input');
+            let newPhoneInput = document.createElement('input');
+            let newPhoneHint = document.createElement('div');
+            let membersLength = members.getElementsByTagName('button').length;
+            if (membersLength < 5) {
+                newButton.type = "button";
+                newButton.innerText = "删除成员";
+                newNameInput.type = "text";
+                newNameInput.className = "people";
+                newNameInput.name = "people_name[]";
+                newNameInput.placeholder = "姓名";
+                newMajorInput.type = "text";
+                newMajorInput.className = "people";
+                newMajorInput.name = "people_major[]";
+                newMajorInput.placeholder = "专业班级";
+                newPhoneInput.type = "text";
+                newPhoneInput.className = "people_phone";
+                newPhoneInput.name = "people_phone[]";
+                newPhoneInput.placeholder = "电话号码";
+                newPhoneHint.className = "ph_hint";
+                newDiv.appendChild(newButton);
+                newDiv.appendChild(newNameInput);
+                newDiv.appendChild(newMajorInput);
+                newDiv.appendChild(newPhoneInput);
+                newDiv.appendChild(newPhoneHint);
+                members.appendChild(newDiv);
+                deleteMember();
+            };
+        }
+        addMember();       
+        addMember();
+
+        function deleteMember() {
+            let buttons = document.getElementById('members').getElementsByTagName('button');
+            let phoneInput = document.getElementsByClassName('people_phone');
+            for (let i = 0; i < buttons.length; i++) {      //闭包    //我特么发现不用闭包也可以，有空再看看闭包具体是啥吧- -
+                // (function (i) {                    //立即执行函数 
+                buttons[i].onclick = function () {
+                    if(i >= 2){
+                        let members = document.getElementById('members');
+                        let p = members.removeChild(members.childNodes[i]);
+                        deleteMember();
+                    };
+                };
+                phoneInput[i].onchange = function () { phoneChange(phoneInput[i].value.length, i) };
+                // }
+                // )(i);
+                //console.log(i);  //控制台可见在for循环内部i有多种取值
+            };
+        }
+    </script>
+</body>
+
+</html>
